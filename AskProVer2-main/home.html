@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskPro - Question & Answer Platform</title>
+    <!-- Link to our external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MAIN NAVIGATION HEADER -->
+    <!-- This appears at the top of every page -->
+<!-- MAIN NAVIGATION HEADER -->
+<header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="AskPro Home" class="header-logo">
+        </a>
+        
+        <nav class="nav-links" id="navLinks">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+            <a href="ask.html" class="nav-link" data-testid="link-ask">Ask Question</a>
+            <a href="about.html" class="nav-link" data-testid="link-about">About Us</a>
+            <a href="contact.html" class="nav-link" data-testid="link-contact">Contact Us</a>
+            <div id="userInfo"></div>
+        </nav>
+
+        <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+            &#9776; 
+        </button> 
+    </div>
+</header>
+<!-- Rest of the file remains unchanged -->
+
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container main-content">
+        <!-- PAGE TITLE -->
+        <div class="page-header">
+            <h2>All Questions</h2>
+            <p class="subtitle">Find answers to your questions or ask a new one</p>
+        </div>
+
+        <!-- SEARCH AND FILTER SECTION -->
+        <!-- This allows users to search questions and filter by category -->
+        <div class="search-filter-section">
+            <!-- Search Input Box -->
+            <div class="search-box">
+                <input 
+                    type="search" 
+                    id="searchInput" 
+                    placeholder="Search questions..." 
+                    class="search-input"
+                    data-testid="input-search"
+                >
+            </div>
+
+            <!-- Category Filter Dropdown -->
+            <div class="filter-box">
+                <select id="categoryFilter" class="category-select" data-testid="select-category">
+                    <!-- JavaScript will populate this with categories -->
+                    <option value="all">All Categories</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Programming">Programming</option>
+                    <option value="General">General</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- AD PLACEHOLDER #1 (Top Banner) -->
+        <!-- ========================================= -->
+        <!-- THIS IS WHERE A BANNER AD WOULD BE PLACED -->
+        <!-- In a real application, you would insert ad code here -->
+        <!-- ========================================= -->
+        <div class="ad-placeholder ad-banner" data-testid="ad-banner-top">
+            <p class="ad-text">Advertisement Space (728x90)</p>
+        </div>
+
+        <!-- QUESTIONS LIST CONTAINER -->
+        <!-- This div will be populated by JavaScript with question cards -->
+        <div id="questionsList" class="questions-list" data-testid="list-questions">
+            <!-- Questions will be dynamically inserted here by script.js -->
+            <!-- JavaScript will read from MOCK_QUESTIONS array and create HTML -->
+        </div>
+
+        <!-- NO RESULTS MESSAGE (Hidden by default) -->
+        <!-- This shows when search/filter returns no results -->
+        <div id="noResults" class="no-results" style="display: none;" data-testid="text-no-results">
+            <p>No questions found. Try a different search or category.</p>
+        </div>
+
+        <!-- AD PLACEHOLDER #2 (Sidebar/Bottom) -->
+        <!-- ========================================= -->
+        <!-- THIS IS WHERE ANOTHER AD WOULD BE PLACED -->
+        <!-- Could be a square ad or another banner -->
+        <!-- ========================================= -->
+        <div class="ad-placeholder ad-square" data-testid="ad-square-bottom">
+            <p class="ad-text">Advertisement Space (300x250)</p>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 AskPro. A student learning project.</p>
+        </div>
+    </footer>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+        kofiWidgetOverlay.draw('askproofficial', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support Us',
+            'floating-chat.donateButton.background-color': '#5bc0de',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</body>
+</html>

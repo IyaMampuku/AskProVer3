@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Detail - AskPro</title>
+    <!-- Link to our external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MAIN NAVIGATION HEADER -->
+<header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="AskPro Home" class="header-logo">
+        </a>
+        
+        <nav class="nav-links" id="navLinks">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+            <a href="ask.html" class="nav-link" data-testid="link-ask">Ask Question</a>
+            <a href="about.html" class="nav-link" data-testid="link-about">About Us</a>
+            <a href="contact.html" class="nav-link" data-testid="link-contact">Contact Us</a>
+            <div id="userInfo"></div>
+        </nav>
+
+        <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+            &#9776; 
+        </button> 
+    </div>
+</header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container main-content">
+        <!-- QUESTION DETAIL SECTION -->
+        <!-- This will display the full question details -->
+        <div id="questionDetail" class="question-detail" data-testid="section-question-detail">
+            <!-- JavaScript will populate this with the question data -->
+            <!-- Loading message shown until JS runs -->
+            <p>Loading question...</p>
+        </div>
+
+        <!-- AD PLACEHOLDER (Right Sidebar or Between Sections) -->
+        <!-- ========================================= -->
+        <!-- THIS IS WHERE AN AD WOULD BE PLACED -->
+        <!-- ========================================= -->
+        <div class="ad-placeholder ad-square" data-testid="ad-square-question">
+            <p class="ad-text">Advertisement Space (300x250)</p>
+        </div>
+
+        <!-- ANSWERS SECTION -->
+        <div class="answers-section">
+            <!-- Section Header showing answer count -->
+            <h3 id="answersHeader" data-testid="text-answers-header">Answers</h3>
+            
+            <!-- Container for all answer cards -->
+            <div id="answersList" class="answers-list" data-testid="list-answers">
+                <!-- JavaScript will insert answer cards here -->
+            </div>
+
+            <!-- Message shown when there are no answers yet -->
+            <div id="noAnswers" class="no-answers" style="display: none;" data-testid="text-no-answers">
+                <p>No answers yet. Be the first to answer this question!</p>
+            </div>
+        </div>
+
+        <!-- SUBMIT ANSWER SECTION -->
+        <div class="submit-answer-section">
+            <h3>Your Answer</h3>
+            <form id="answerForm" class="answer-form" data-testid="form-submit-answer">
+                <!-- Textarea for writing the answer -->
+                <textarea 
+                    id="answerText" 
+                    placeholder="Share your knowledge and help others..." 
+                    rows="6" 
+                    required
+                    data-testid="input-answer-text"
+                ></textarea>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary" data-testid="button-submit-answer">
+                    Post Answer
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 AskPro. A student learning project.</p>
+        </div>
+    </footer>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+        kofiWidgetOverlay.draw('askproofficial', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support Us',
+            'floating-chat.donateButton.background-color': '#5bc0de',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
