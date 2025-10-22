@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - AskPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MAIN NAVIGATION HEADER -->
+<header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="AskPro Home" class="header-logo">
+        </a>
+        
+        <nav class="nav-links" id="navLinks">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+            <a href="ask.html" class="nav-link" data-testid="link-ask">Ask Question</a>
+            <a href="about.html" class="nav-link" data-testid="link-about">About Us</a>
+            <a href="contact.html" class="nav-link" data-testid="link-contact">Contact Us</a>
+            <div id="userInfo"></div>
+        </nav>
+
+        <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+            &#9776; 
+        </button> 
+    </div>
+</header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="container main-content">
+        <!-- LOGIN/SIGNUP CONTAINER -->
+        <div class="auth-page-container">
+            
+            <!-- LOGIN FORM -->
+            <div id="loginContainer" class="auth-form-container">
+                <h2>Login to AskPro</h2>
+                <p class="auth-subtitle">Welcome back! Enter your credentials to continue.</p>
+                
+                <form id="loginForm" class="auth-form" data-testid="form-login">
+                    <div class="form-group">
+                        <label for="loginUsername">Username or Email</label>
+                        <input 
+                            type="text" 
+                            id="loginUsername" 
+                            placeholder="Enter your username or email"
+                            required
+                            data-testid="input-login-username"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input 
+                            type="password" 
+                            id="loginPassword" 
+                            placeholder="Enter your password"
+                            required
+                            data-testid="input-login-password"
+                        >
+                        <!-- NOTE FOR STUDENTS: In a real application, this password would be -->
+                        <!-- sent to a server where it would be hashed and compared to the stored hash -->
+                        <!-- NEVER send plain text passwords over HTTP! Always use HTTPS! -->
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large" data-testid="button-login-submit">
+                        Login
+                    </button>
+                </form>
+                
+                <p class="auth-switch">
+                    Don't have an account? 
+                    <a href="#" id="showSignup" data-testid="link-show-signup">Sign Up</a>
+                </p>
+                
+                <!-- DEMO CREDENTIALS BOX -->
+                <div class="demo-credentials">
+                    <h4>Demo Accounts (For Testing)</h4>
+                    <p><strong>Username:</strong> john_doe | <strong>Password:</strong> password123</p>
+                    <p><strong>Username:</strong> jane_smith | <strong>Password:</strong> mypass456</p>
+                    <p><strong>Username:</strong> code_wizard | <strong>Password:</strong> wizard789</p>
+                    <small>⚠️ These are test accounts with plain text passwords. Never do this in production!</small>
+                </div>
+            </div>
+
+            <!-- SIGNUP FORM (Hidden by default) -->
+            <div id="signupContainer" class="auth-form-container" style="display: none;">
+                <h2>Create Your Account</h2>
+                <p class="auth-subtitle">Join the AskPro community and start sharing knowledge!</p>
+                
+                <form id="signupForm" class="auth-form" data-testid="form-signup">
+                    <div class="form-group">
+                        <label for="signupUsername">Username</label>
+                        <input 
+                            type="text" 
+                            id="signupUsername" 
+                            placeholder="Choose a unique username"
+                            required
+                            data-testid="input-signup-username"
+                        >
+                        <small class="form-hint">This will be your display name on the platform</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupFullName">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="signupFullName" 
+                            placeholder="Your full name"
+                            required
+                            data-testid="input-signup-fullname"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input 
+                            type="email" 
+                            id="signupEmail" 
+                            placeholder="your@email.com"
+                            required
+                            data-testid="input-signup-email"
+                        >
+                        <small class="form-hint">We'll never share your email with anyone</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input 
+                            type="password" 
+                            id="signupPassword" 
+                            placeholder="Create a strong password"
+                            required
+                            minlength="6"
+                            data-testid="input-signup-password"
+                        >
+                        <small class="form-hint">At least 6 characters (but use 12+ in real apps!)</small>
+                    </div>
+                    
+                    <!-- STUDENT NOTE: PASSWORD HASHING EXPLANATION -->
+                    <!-- ============================================ -->
+                    <!-- In a real application, when you click "Sign Up": -->
+                    <!-- 1. JavaScript would send this data to the server via HTTPS -->
+                    <!-- 2. Server would validate all fields -->
+                    <!-- 3. Server would check username/email aren't already taken -->
+                    <!-- 4. Server would generate a random "salt" (unique per user) -->
+                    <!-- 5. Server would hash: password_hash = bcrypt(password + salt) -->
+                    <!-- 6. Server would store: {username, email, password_hash, salt} -->
+                    <!-- 7. Original password is NEVER stored! Only the hash! -->
+                    <!--  -->
+                    <!-- When logging in: -->
+                    <!-- 1. Server looks up user by username/email -->
+                    <!-- 2. Server gets stored hash and salt from database -->
+                    <!-- 3. Server hashes entered password with stored salt -->
+                    <!-- 4. Server compares: new_hash === stored_hash -->
+                    <!-- 5. If match -> login success! If not -> wrong password -->
+                    <!--  -->
+                    <!-- Our simplified version skips this for learning purposes -->
+                    <!-- but you should NEVER skip this in a real application! -->
+                    <!-- ============================================ -->
+                    
+                    <button type="submit" class="btn btn-primary btn-large" data-testid="button-signup-submit">
+                        Create Account
+                    </button>
+                </form>
+                
+                <p class="auth-switch">
+                    Already have an account? 
+                    <a href="#" id="showLogin" data-testid="link-show-login">Login</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- EDUCATIONAL NOTE SECTION -->
+        <div class="security-note">
+            <h3>🔒 Security Note for Students</h3>
+            <p>
+                This simplified authentication system is for <strong>learning purposes only</strong>. 
+                In production applications, you must:
+            </p>
+            <ul>
+                <li><strong>Always use HTTPS</strong> to encrypt data in transit</li>
+                <li><strong>Hash passwords</strong> using bcrypt, argon2, or similar algorithms</li>
+                <li><strong>Never store plain text passwords</strong> in your database</li>
+                <li><strong>Use secure session management</strong> with tokens (JWT) or server sessions</li>
+                <li><strong>Implement rate limiting</strong> to prevent brute force attacks</li>
+                <li><strong>Add email verification</strong> to confirm user identity</li>
+                <li><strong>Use strong password policies</strong> (min 12 characters, complexity requirements)</li>
+                <li><strong>Enable two-factor authentication</strong> (2FA) for extra security</li>
+            </ul>
+            <p>
+                Our demo accounts use simple passwords for testing. Real applications should enforce 
+                strong passwords and use proven security libraries!
+            </p>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 AskPro. A student learning project.</p>
+        </div>
+    </footer>
+
+    <!-- LINK TO JAVASCRIPT FILE -->
+    <script src="script.js"></script>
+</body>
+</html>

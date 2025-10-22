@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AskPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="AskPro Home" class="header-logo">
+        </a>
+        
+        <nav class="nav-links" id="navLinks">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+            <a href="ask.html" class="nav-link" data-testid="link-ask">Ask Question</a>
+            <a href="about.html" class="nav-link" data-testid="link-about">About Us</a>
+            <a href="contact.html" class="nav-link" data-testid="link-contact">Contact Us</a>
+            <div id="userInfo"></div>
+        </nav>
+
+        <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+            &#9776; 
+        </button> 
+    </div>
+</header>
+
+    <main class="container main-content">
+        <div class="page-header">
+            <h2>About AskPro</h2>
+            <p class="subtitle">Our mission, vision, and commitment to quality Q&amp;A.</p>
+        </div>
+
+        <div class="form-container">
+
+            <div class="motto-grid">
+                
+                <div class="motto-card what-we-do-card">
+                    <h3 class="card-title">✨ What We Do ✨</h3>
+                    <p>
+                        <strong>AskPro</strong> is a friendly Q&A space where everyone can ask and answer freely. We're a digital town square for <b>learning, sharing, and connecting</b> across all topics.
+                    </p>
+                    <p>
+                        What makes us special? We value our contributors! Verified answers get visibility, and users can choose between a <b>free, ad-supported experience</b> or an <b>ad-free subscription</b>.
+                    </p>
+                </div>
+
+                <div class="motto-card mission-card">
+                    <h3 class="card-title">🎯 Our Mission</h3>
+                    <p>
+                        Our mission is to create a dynamic and inclusive online space where people can <b>freely ask and share knowledge</b>. We make information accessible by offering a free platform and reward our expert contributors, building a culture of <b>trust, learning, and collaboration</b>.
+                    </p>
+                </div>
+
+                <div class="motto-card vision-card">
+                    <h3 class="card-title">🌈 Our Vision</h3>
+                    <p>
+                        We aim to be the <b>most trusted and engaging Q&A platform</b> globally. Our vision is to revolutionize knowledge exchange by combining community-driven learning with <b>fairness, accessibility, and innovation</b>, empowering all users to grow and succeed together.
+                    </p>
+                </div>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+            
+            <section id="our-team">
+                <h3 style="font-size: 22px; margin-bottom: 25px; text-align: center;">Meet the Team Behind AskPro</h3>
+                <div class="team-grid">
+
+                    <div class="team-member-card">
+                        <img src="mampuku.png" alt="Photo of Crishia Mampuku" class="member-photo">
+                        <h4>Crishia Mampuku</h4>
+                        <p class="member-role">Web Developer</p>
+                        <p class="member-bio">Dedicated to building and managing the company’s online platform, ensuring a smooth and enjoyable experience for all users.</p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="Sam.jpg" alt="Photo of Samantha Ricohermozo" class="member-photo">
+                        <h4>Samantha Ricohermozo</h4>
+                        <p class="member-role">Technical Manager</p>
+                        <p class="member-bio">Handles and monitors the platform’s daily operations, ensuring the company’s credibility and reliability in providing the best service to its users.</p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="Javier.jpg" alt="Photo of Mhevyl Javier" class="member-photo">
+                        <h4>Mhevyl Javier</h4>
+                        <p class="member-role">Managing Partner/Operation Head</p>
+                        <p class="member-bio">Manages the company’s day-to-day operations and participates in major decision-making processes to ensure smooth management and success of the business. </p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="Mel.jpg" alt="Photo of Melqiades Laturnas" class="member-photo">
+                        <h4>Melqiades Laturnas</h4>
+                        <p class="member-role">Managing Partner</p>
+                        <p class="member-bio">Contributes capital to support the company’s startup and growth. Holds the overall decision-making authority within the company.</p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="lloren.jpg" alt="Photo of Johnessa Lloren" class="member-photo">
+                        <h4>Johnessa Lloren</h4>
+                        <p class="member-role">Financial Manager</p>
+                        <p class="member-bio">Responsible for managing the company’s financial resources and capital, ensuring proper budgeting and allocation of funds.</p>
+                    </div>
+
+                    <div class="team-member-card">
+                        <img src="Luste.jpg" alt="Photo of  Jewel Luste" class="member-photo">
+                        <h4>Jewel Luste</h4>
+                        <p class="member-role">Marketing Manager</p>
+                        <p class="member-bio">Responsible for promoting the company and its platform, ensuring that it reaches its target audience and becomes well-known to customers.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 AskPro. A student learning project.</p>
+        </div>
+    </footer>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+        kofiWidgetOverlay.draw('askproofficial', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support Us',
+            'floating-chat.donateButton.background-color': '#5bc0de',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AskPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="main-header">
+    <div class="container">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="AskPro Home" class="header-logo">
+        </a>
+        
+        <nav class="nav-links" id="navLinks">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <a href="index.html" class="nav-link" data-testid="link-home">Home</a>
+            <a href="ask.html" class="nav-link" data-testid="link-ask">Ask Question</a>
+            <a href="about.html" class="nav-link" data-testid="link-about">About Us</a>
+            <a href="contact.html" class="nav-link" data-testid="link-contact">Contact Us</a>
+            <div id="userInfo"></div>
+        </nav>
+
+        <button class="hamburger-toggle" id="hamburgerToggle" aria-label="Toggle Navigation Menu">
+            &#9776; 
+        </button> 
+    </div>
+</header>
+    <main class="container main-content">
+        <div class="page-header">
+            <h2>Contact Us</h2>
+            <p class="subtitle">We'd love to hear from you! 📧</p>
+        </div>
+
+        <div class="form-container" id="contact-us">
+            <p>
+                Whether you have feedback, questions, or partnership opportunities, 
+                our team is always ready to assist. Feel free to reach out using the form below or through our social media pages.
+            </p>
+            <br>
+
+            <form action="https://formsubmit.co/askproteam@gmail.com" method="POST" class="question-form">
+                
+                <input type="hidden" name="_subject" value="New Contact Message from AskPro Website!">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="Message" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" data-testid="button-send-message">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+
+            <hr style="margin-top:30px; margin-bottom: 20px; border: 0; border-top: 1px solid #e2e8f0;">
+            
+            <div class="contact-info">
+                <h3>Our Contact Information</h3>
+                <p><strong>Email:</strong> 
+                    <a href="mailto:askproteam@gmail.com" class="nav-link-text">askproteam@gmail.com</a>
+                </p>
+                <p><strong>Facebook:</strong> 
+                    <a href="https://www.facebook.com/share/1AEhSnS7kb/?mibextid=wwXIfr" target="_blank" class="nav-link-text">facebook.com/AskPro.Official</a>
+                </p>
+                <p><strong>Instagram:</strong> 
+                    <a href=" https://www.instagram.com/_askpro.official?igsh=OGc3MXI4cHVkOGo0&utm_source=ig_contact_invite" target="_blank" class="nav-link-text">instagram.com/AskPro.Official</a>
+                </p>
+                <p><strong>Location:</strong> Manila, Philippines</p>
+                <p class="form-hint" style="font-size: 14px; margin-top: 15px;">
+                    Our support team will respond within 24–48 hours. Thank you for being part of the AskPro community!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 AskPro. A student learning project.</p>
+        </div>
+    </footer>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+        kofiWidgetOverlay.draw('askproofficial', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support Us',
+            'floating-chat.donateButton.background-color': '#5bc0de',
+            'floating-chat.donateButton.text-color': '#323842'
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
